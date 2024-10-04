@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCreer</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #buttonsContainer {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¿Quieres ser mi novia un mes más?</h1>
+
+    <div id="buttonsContainer">
+        <button id="yesButton">Sí</button>
+        <button id="noButton">No</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+        const container = document.getElementById('buttonsContainer');
+
+        noButton.addEventListener('mouseover', function() {
+            // Mover el botón "No" en una dirección distinta dentro del contenedor
+            const randomX = Math.random() * (container.offsetWidth - noButton.offsetWidth);
+            const randomY = Math.random() * (container.offsetHeight - noButton.offsetHeight);
+
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        });
+
+        yesButton.addEventListener('click', function() {
+            // Redireccionar a una nueva página o mostrar un mensaje de éxito
+            window.location.href = "Te.html"; // Cambia este archivo al que desees
+        });
+    </script>
+
+</body>
+</html>
